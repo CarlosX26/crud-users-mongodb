@@ -18,4 +18,6 @@ const UserReturn = User.extend({
   password: true,
 })
 
-export { User, UserReturn }
+const AllUsersReturn = z.array(UserReturn)
+
+export { User, UserReturn, AllUsersReturn }

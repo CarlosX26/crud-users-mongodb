@@ -1,5 +1,8 @@
 import { Router } from "express"
-import { createUserController } from "../controllers/users.controllers"
+import {
+  createUserController,
+  readAllUsersController,
+} from "../controllers/users.controllers"
 import { User } from "../schemas/users.schema"
 import validateSchemaMiddleware from "../middlewares/validateSchema.middleware"
 import verifyEmailExistsMiddleware from "../middlewares/verifyEmailsExists.middleware"
@@ -12,5 +15,6 @@ usersRouter.post(
   verifyEmailExistsMiddleware,
   createUserController
 )
+usersRouter.get("", readAllUsersController)
 
 export default usersRouter
