@@ -1,9 +1,10 @@
 import { Request, Response } from "express"
+import authService from "../services/auth.service"
 
 const authController = async (req: Request, res: Response) => {
-  const data = await undefined
+  const data = await authService(req.body)
 
-  return res.status(200).json(data)
+  return res.status(200).json({ token: data })
 }
 
 export { authController }
