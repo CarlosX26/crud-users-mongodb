@@ -19,7 +19,7 @@ usersRouter.post(
 )
 usersRouter.get("", validateTokenMiddleware, readAllUsersController)
 usersRouter.patch(
-  "",
+  "/profile",
   validateTokenMiddleware,
   validateSchemaMiddleware(UserUpdate),
   updateUserController
