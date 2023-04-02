@@ -16,7 +16,7 @@ const authService = async ({ email, password }: IAuth): Promise<string> => {
     throw new AppError("Email or password invalid.")
   }
 
-  const validatePassword = compare(password, user.password)
+  const validatePassword = await compare(password, user.password)
 
   if (!validatePassword) {
     throw new AppError("Email or password invalid.")
