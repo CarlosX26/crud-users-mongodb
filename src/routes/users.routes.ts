@@ -2,10 +2,12 @@ import { Router } from "express"
 import {
   createUserController,
   readAllUsersController,
+  updateUserController,
 } from "../controllers/users.controllers"
-import { User } from "../schemas/users.schema"
+import { User, UserUpdate } from "../schemas/users.schema"
 import validateSchemaMiddleware from "../middlewares/validateSchema.middleware"
 import verifyEmailExistsMiddleware from "../middlewares/verifyEmailsExists.middleware"
+import validateTokenMiddleware from "../middlewares/validateToken.middleware"
 
 const usersRouter = Router()
 
@@ -15,6 +17,12 @@ usersRouter.post(
   verifyEmailExistsMiddleware,
   createUserController
 )
-usersRouter.get("", readAllUsersController)
+usersRouter.get("", validateTokenMiddleware, readAllUsersController)
+usersRouter.patch(
+  "",
+  validateTokenMiddleware,
+  validateSchemaMiddleware(UserUpdate),
+  updateUserController
+)
 
 export default usersRouter

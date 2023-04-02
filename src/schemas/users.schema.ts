@@ -12,6 +12,8 @@ const User = z.object({
     .transform((password) => hashSync(password, 10)),
 })
 
+const UserUpdate = User.partial()
+
 const UserReturn = User.extend({
   id: z.string(),
 }).omit({
@@ -20,4 +22,4 @@ const UserReturn = User.extend({
 
 const AllUsersReturn = z.array(UserReturn)
 
-export { User, UserReturn, AllUsersReturn }
+export { User, UserUpdate, UserReturn, AllUsersReturn }
