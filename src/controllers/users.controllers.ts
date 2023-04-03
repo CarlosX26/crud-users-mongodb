@@ -10,6 +10,12 @@ const createUserController = async (req: Request, res: Response) => {
   return res.status(201).json(data)
 }
 
+const readUserController = async (req: Request, res: Response) => {
+  const data = await undefined
+
+  return res.status(200).json(data)
+}
+
 const readAllUsersController = async (req: Request, res: Response) => {
   const data = await readAllUsersService()
 
@@ -30,6 +36,7 @@ const deleteUserController = async (req: Request, res: Response) => {
 
 export {
   createUserController,
+  readUserController,
   readAllUsersController,
   updateUserController,
   deleteUserController,
