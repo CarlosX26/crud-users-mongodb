@@ -1,8 +1,8 @@
-import { prisma } from "../app"
-import { IAuth } from "../interfaces/auth.interfaces"
+import { prisma } from "../../app"
+import { IAuth } from "../../interfaces/auth.interfaces"
 import { sign } from "jsonwebtoken"
 import { compare } from "bcryptjs"
-import AppError from "../error"
+import AppError from "../../error"
 import "dotenv/config"
 
 const authService = async ({ email, password }: IAuth): Promise<string> => {

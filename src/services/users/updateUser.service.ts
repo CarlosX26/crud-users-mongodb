@@ -1,7 +1,7 @@
-import { prisma } from "../app"
-import { IUserReturn, IUserUpdate } from "../interfaces/users.interfaces"
-import { UserReturn } from "../schemas/users.schema"
-import AppError from "../error"
+import { prisma } from "../../app"
+import { IUserReturn, IUserUpdate } from "../../interfaces/users.interfaces"
+import { UserReturn } from "../../schemas/users.schema"
+import AppError from "../../error"
 
 const updateUserService = async (
   userAuthId: string,
