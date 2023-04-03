@@ -21,4 +21,15 @@ const updateUserController = async (req: Request, res: Response) => {
   return res.status(200).json(data)
 }
 
-export { createUserController, readAllUsersController, updateUserController }
+const deleteUserController = async (req: Request, res: Response) => {
+  const data = await undefined
+
+  return res.status(204).json(data)
+}
+
+export {
+  createUserController,
+  readAllUsersController,
+  updateUserController,
+  deleteUserController,
+}
