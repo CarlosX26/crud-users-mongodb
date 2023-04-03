@@ -70,8 +70,8 @@ Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de
 #### body
 ```json
 {
-    "name":"Carlos Jr.",
-    "age": 21,
+	"name":"Carlos Jr.",
+   	"age": 21,
 	"email":"carl@mail.com",
 	"password": "1234aB"
 }
