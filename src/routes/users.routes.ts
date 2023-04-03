@@ -3,6 +3,7 @@ import {
   createUserController,
   deleteUserController,
   readAllUsersController,
+  readUserController,
   updateUserController,
 } from "../controllers/users.controllers"
 import { User, UserUpdate } from "../schemas/users.schema"
@@ -19,6 +20,7 @@ usersRouter.post(
   createUserController
 )
 usersRouter.get("", validateTokenMiddleware, readAllUsersController)
+usersRouter.get("/profile", validateTokenMiddleware, readUserController)
 usersRouter.patch(
   "/profile",
   validateTokenMiddleware,
