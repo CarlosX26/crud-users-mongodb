@@ -1,6 +1,7 @@
 import { Router } from "express"
 import {
   createUserController,
+  deleteUserController,
   readAllUsersController,
   updateUserController,
 } from "../controllers/users.controllers"
@@ -24,5 +25,6 @@ usersRouter.patch(
   validateSchemaMiddleware(UserUpdate),
   updateUserController
 )
+usersRouter.delete("/profile", validateTokenMiddleware, deleteUserController)
 
 export default usersRouter
