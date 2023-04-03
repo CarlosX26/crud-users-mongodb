@@ -2,6 +2,7 @@ import { Request, Response } from "express"
 import createUserService from "../services/createUser.service"
 import readAllUsersService from "../services/readAllUsers.service"
 import updateUserService from "../services/updateUser.service"
+import deleteUserService from "../services/deleteUser.service"
 
 const createUserController = async (req: Request, res: Response) => {
   const data = await createUserService(req.body)
@@ -22,9 +23,9 @@ const updateUserController = async (req: Request, res: Response) => {
 }
 
 const deleteUserController = async (req: Request, res: Response) => {
-  const data = await undefined
+  await deleteUserService(req.userAuthId)
 
-  return res.status(204).json(data)
+  return res.status(204).send()
 }
 
 export {
